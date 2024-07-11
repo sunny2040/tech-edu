@@ -1,4 +1,8 @@
-/* Existing styles from previous example */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -19,7 +23,13 @@ body {
 }
 
 .header .logo img {
-    height: 40px;
+    height: 56px;
+    width: 80px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
 }
 
 .header-right a {
@@ -31,6 +41,7 @@ body {
 .navbar {
     background-color: #004d40;
     padding: 10px;
+    z-index: 1000;
 }
 
 .navbar ul {
@@ -38,10 +49,11 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-direction: column; /* Adjusted for stacking items vertically */
 }
 
 .navbar ul li {
-    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .navbar ul li a {
@@ -116,6 +128,12 @@ body {
     color: white;
     text-decoration: none;
 }
+.icon img {
+    height: 40px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto;
+}
 
 .student-chart-link {
     display: block;
@@ -131,6 +149,28 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-left {
+    display: flex;
+}
+
+.footer-left a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.footer-right {
+    flex: 1;
+    text-align: right;
+}
+
+.footer-right span {
+    color: white;
 }
 
 .form {
@@ -168,4 +208,24 @@ body {
 
 .form input[type="submit"]:hover {
     background-color: #005a4f;
+}
+
+.notification-bar {
+    background-color: #ffab91;
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.notification-bar p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
 }
