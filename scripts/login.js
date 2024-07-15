@@ -38,7 +38,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         
         // Redirect based on user role
         if (loggedInUser.role === 'admin') {
-            window.location.href = 'index.html';
+            window.location.href = 'center.html';
         } else if (loggedInUser.role === 'student') {
             window.location.href = 'student-index.html';
         }
