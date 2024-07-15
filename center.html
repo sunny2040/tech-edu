@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-Tech Institute Of Education</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="styles/images/658e88cbd90fb.jpg" alt="Micro-Tech Institute Of Education Logo">
+        </div>
+        <div class="header-right" id="header-right">
+            <!-- This part will be dynamically updated -->
+            <span>HI GUEST</span>
+            <a href="#">My Account</a>
+            <a href="login.html">LOGIN</a>
+        </div>
+    </header>
+    <aside class="sidebar">
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="student.html">Student</a></li>
+            <li><a href="exam.html">Exam</a></li>
+            <li><a href="exam.html">Wallet</a></li>
+            <li><a href="exam.html">Seat Management</a></li>
+            <li><a href="exam.html">Book</a></li>
+            <li><a href="exam.html">Center Certificate</a></li>
+            <li><a href="exam.html">Admit Card</a></li>
+            <li><a href="exam.html">Marksheet</a></li>
+            <li><a href="exam.html">Certificate</a></li>
+            <li><a href="exam.html">Id Card</a></li>
+            <li><a href="exam.html">Admission</a></li>
+            <!-- Add more menu items as needed -->
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <div class="status-bar">
+            <span>Status: Valid upto - 30 March, 2025 (VP)</span>
+            <span>Welcome To No. 1 Education Brand</span>
+        </div>
+        <div class="notification-bar">
+            <p>Centers are informed that there is no other website of Micro Tech Edu.</p>
+        </div>
+        <div class="dashboard">
+            <!-- Dashboard icons -->
+            <div class="icon"><a href="#"><img src="styles/images/dash.png" alt="Dashboard">Dashboard</a></div>
+            <div class="icon"><a href="#"><img src="styles/images/stud.jpg  " alt="Student">Student</a></div>
+            <div class="icon"><a href="#"><img src="styles/images/exam.png" alt="Exam">Exam</a></div>
+            <div class="icon"><a href="#"><img src="styles/images/wallet.jpg" alt="Wallet">Wallet</a></div>
+            <div class="icon"><a href="#"><img src="styles/images/seat.png" alt="Seat Management">Seat Management</a></div>
+            <div class="icon"><a href="#"><img src="styles/images/book.jpg" alt="Book">Book</a></div>
+            <div class="icon"><a href="#"><img src="styles/images/certi.jpg" alt="Center Certificate">Center Certificate</a></div>
+            <div class="icon"><a href="#"><img src="styles/images/admit.png" alt="Admit Card">Admit Card</a></div>
+            <div class="icon"><a href="#"><img src="styles/images/certi.jpg" alt="Marksheet">Marksheet</a></div>
+            <div class="icon"><a href="#"><img src="styles/images/certi.jpg" alt="Certificate">Certificate</a></div>
+            <div class="icon"><a href="#"><img src="styles/images/id_card.png" alt="Id Card">Id Card</a></div>
+            <div class="icon"><a href="#"><img src="styles/images/admission.jpg" alt="Admission">Admission</a></div>
+            <!-- Add more icons as needed -->
+        </div>
+        <a href="#" class="student-chart-link">Student Chart</a>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-left">
+            <a href="#">FAQ</a>
+            <a href="#">Policy</a>
+        </div>
+        <div class="footer-right">
+            <span>&copy; 2024 Micro-Tech Institute Of Education. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        // Retrieve logged in user information from sessionStorage
+        let loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+        if (loggedInUser) {
+            updateHeader(loggedInUser.fullname);
+        }
+    
+        function updateHeader(username) {
+            document.getElementById('header-right').innerHTML = `
+                <span>Hi ${username}</span>
+                <a href="#">My Account</a>
+                <a href="#" onclick="logout()">Logout</a>
+            `;
+        }
+    
+        function logout() {
+            // Clear sessionStorage and redirect to login page
+            sessionStorage.removeItem('loggedInUser');
+            window.location.href = 'login.html';
+        }
+    
+        // Check for page visibility changes (tab/window focus)
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'hidden') {
+                // Page is not visible, clear sessionStorage
+                sessionStorage.removeItem('loggedInUser');
+            }
+        });
+    </script>
+    
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
