@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-Tech Institute Of Education</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #002147;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        .navigation ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navigation li {
+            margin: 0 10px;
+        }
+
+        .navigation a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .language-switch a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .banner {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .banner-text h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .actions a {
+            text-decoration: none;
+        }
+
+        .actions button {
+            background-color: #002147;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .actions button:hover {
+            background-color: #0056b3;
+        }
+
+        .certificate-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #002147;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+            background-color: #002147;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #002147;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .footer-content {
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="styles/images/658e88cbd90fb.jpg" alt="Logo">
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="login.html">Student Zone</a></li>
+                    <li><a href="course.html">Courses Offered</a></li>
+                    <li><a href="#">Affiliation Process</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Download</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="banner">
+            <img src="styles/images/banner.jpg" alt="Banner">
+        </div>
+        <div class="content">
+            <section class="actions">
+                <a href="login.html"><button>Student Login</button></a>
+                <a href="login.html"><button>Center Login</button></a>
+                <a href="certificate-verification.html"><button>Certificate Verification</button></a>
+                <!-- Add more buttons as needed -->
+            </section>
+            <section class="certificate-section">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title"><strong>GET CERTIFICATE</strong></h2>
+                        <!-- Enrollment and Date of Birth Form -->
+                        <form class="form" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="enrollmentNo">Enrollment No.</label>
+                                <input type="text" id="enrollmentNo" name="enrollmentNo" class="form-control" placeholder="Enter Enrollment No." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">Date of Birth</label>
+                                <input type="date" id="dob" name="dob" class="form-control" required>
+                            </div>
+                            <!-- Submit Button (Centered) -->
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Education Maximum. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

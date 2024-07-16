@@ -348,434 +348,42 @@
             background-color: #555555; /* Darker background color on hover */
         }
     </style>
+     <style>
+        /* Additional CSS */
+        .ftco-section .row {
+            display: flex;
+            align-items: center;
+        }
 
-<style>
-    .bg-light-blue {
-        background-color: #e0f7fa; /* Light blue background color */
-        padding: 20px; /* Adjust padding as per your design */
-    }
-    
-    .bg-light-blue .courses-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .bg-light-blue .course-card {
-        background-color: #ffffff; /* White background for each card */
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin: 10px;
-        padding: 20px;
-        text-align: center;
-        width: 250px; /* Adjust width as per your design */
-    }
-    
-    .bg-light-blue h2 {
-        color: #333333; /* Dark text color */
-        text-align: center;
-    }
-    
-    .bg-light-blue .btn-primary {
-        background-color: #333333; /* Dark background color for the button */
-        color: #ffffff; /* White text color */
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 5px;
-        display: inline-block;
-        margin-top: 20px;
-    }
-    
-    .bg-light-blue .btn-primary:hover {
-        background-color: #555555; /* Darker background color on hover */
-    }
-</style>
+        .ftco-section .col-md-6 {
+            display: flex;
+            align-items: center;
+        }
 
-<style>
-    .footer {
-        background-color: #333333;
-        color: #ffffff;
-        padding: 30px 0;
-    }
-    .footer h3 {
-        color: #ffffff;
-        font-size: 20px;
-        margin-bottom: 20px;
-    }
-    .footer-links {
-        list-style-type: none;
-        padding: 0;
-    }
-    .footer-links li {
-        margin-bottom: 10px;
-    }
-    .footer-links a {
-        color: #ffffff;
-        text-decoration: none;
-    }
-    .footer-links a:hover {
-        text-decoration: underline;
-    }
-    address {
-        color: #ffffff;
-        font-style: normal;
-        line-height: 1.6;
-    }
-</style>
-    <style>
-/* Franchise Dropdown */
-.main-nav li {
-    position: relative;
-}
+        .ftco-section .hero-wrap {
+            flex: 1;
+        }
 
-/* Links within the list items */
-.main-nav a {
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #f9f9f9;
-}
+        .ftco-section .hero-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0;
+        }
 
-/* Styling the dropdown menu */
-.main-nav .has-dropdown .dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #f9f9f9;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    min-width: 200px;
-    z-index: 1000;
-    border-radius: 4px;
-    overflow: hidden;
-}
+        .ftco-section .text-section {
+            flex: 1;
+            padding-left: 20px;
+        }
 
-.main-nav .has-dropdown:hover .dropdown {
-    display: block;
-}
+        .ftco-section h4, .ftco-section h6 {
+            margin: 20px;
+        }
 
-.main-nav .dropdown li {
-    width: 100%;
-}
-.main-nav .dropdown a {
-    padding: 10px 15px;
-    white-space: nowrap;
-    color: #000;
-}
-
-.main-nav .dropdown a:hover {
-    background: #f5f5f5;
-}
-
-.main-nav a:hover {
-    background: #555555;
-}
-
+        .ftco-section p {
+            margin: 50px 0;
+        }
     </style>
-        <style>
-            /* Additional CSS for styling */
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f9f9f9; /* Light gray background */
-            }
-            .course-card {
-                background: #fff;
-                padding: 15px;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-                margin-bottom: 20px;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                text-align: center;
-                transition: transform 0.3s ease;
-            }
-            .course-card:hover {
-                transform: translateY(-5px); /* Lift card on hover */
-                box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Larger shadow on hover */
-            }
-            .course-card img {
-                width: 70px;
-                height: 70px;
-                object-fit: cover;
-                border-radius: 50%; /* Circular format */
-                margin: 0 auto 10px; /* Center image and add bottom margin */
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Light shadow for image */
-            }
-            .course-card h3 {
-                font-size: 16px;
-                margin-bottom: 5px;
-                color: #333; /* Dark text color */
-            }
-            .course-card p {
-                font-size: 14px;
-                line-height: 1.6;
-                color: #666; /* Slightly lighter text color */
-            }
-            .courses-container {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr); /* 4 columns grid */
-                gap: 20px; /* Spacing between cards */
-                padding: 20px;
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-            .courses-section {
-                text-align: center;
-                padding: 50px 0;
-            }
-            @media (max-width: 1200px) {
-                .courses-container {
-                    grid-template-columns: repeat(3, 1fr); /* 3 columns on smaller screens */
-                }
-            }
-            @media (max-width: 900px) {
-                .courses-container {
-                    grid-template-columns: repeat(2, 1fr); /* 2 columns on even smaller screens */
-                }
-            }
-            @media (max-width: 600px) {
-                .courses-container {
-                    grid-template-columns: 1fr; /* 1 column on mobile */
-                }
-                .course-card {
-                    padding: 15px;
-                }
-                .course-card img {
-                    width: 50px;
-                    height: 50px;
-                }
-                .course-card h3 {
-                    font-size: 14px;
-                }
-                .course-card p {
-                    font-size: 12px;
-                }
-            }
-    
-            /* Button Styles */
-            .btn {
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #007bff; /* Blue color, adjust as needed */
-                color: #fff; /* White text color */
-                text-decoration: none;
-                border-radius: 5px;
-                transition: background-color 0.3s ease;
-                margin-top: 20px; /* Space between cards and button */
-            }
-    
-            .btn:hover {
-                background-color: #0056b3; /* Darker shade of blue on hover */
-            }
-    
-            /* Counter Section Styles */
-            .counter-section {
-                background-color: #f9f9f9;
-                padding: 50px 0;
-                text-align: center;
-            }
-    
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-    
-            .section-title {
-                font-size: 24px;
-                color: #333;
-                margin-bottom: 20px;
-            }
-    
-            .form {
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-    
-            .counter-item {
-                background-color: #fff;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-                text-align: center;
-                transition: transform 0.3s ease;
-                width: 200px; /* Adjust card width */
-            }
-    
-            .counter-item:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            }
-    
-            .counter-item h2 {
-                font-size: 36px;
-                margin-bottom: 10px;
-            }
-    
-            .counter-item p {
-                font-size: 16px;
-                color: #666;
-                margin: 0;
-            }
-    
-            .counter-item i {
-                margin-left: 5px; /* Adjust spacing between count and icon */
-                color: #007bff; /* Adjust icon color */
-            }
-    
-            /* Image Styles */
-            .image {
-                max-width: 50%;
-                height: auto;
-                display: block;
-                margin: 0 auto;
-                max-height: 100px; /* Set a maximum height if needed */
-            }
-    
-            /* Footer Styles */
-            .footer {
-                background-color: #333333;
-                color: #ffffff;
-                padding: 30px 0;
-            }
-            .footer h3 {
-                color: #ffffff;
-                font-size: 20px;
-                margin-bottom: 20px;
-            }
-            .footer-links {
-                list-style-type: none;
-                padding: 0;
-            }
-            .footer-links li {
-                margin-bottom: 10px;
-            }
-            .footer-links a {
-                color: #ffffff;
-                text-decoration: none;
-            }
-            .footer-links a:hover {
-                text-decoration: underline;
-            }
-            address {
-                color: #ffffff;
-                font-style: normal;
-                line-height: 1.6;
-            }
-        </style>
-        <style>
-            /* Additional CSS for styling */
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f9f9f9; /* Light gray background */
-            }
-            .course-info {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 20px;
-            }
-            .course-info .content {
-                flex-basis: 60%;
-                max-width: 60%;
-            }
-            .course-info .image {
-                flex-basis: 30%;
-                max-width: 30%;
-                margin-left: auto;
-            }
-            .course-info img {
-                width: 100%;
-                height: auto;
-                display: block;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            }
-            .course-table {
-                margin-top: 20px;
-            }
-            .course-table table {
-                width: 100%;
-                border-collapse: collapse;
-                margin-top: 20px;
-            }
-            .course-table th, .course-table td {
-                border: 1px solid #ddd;
-                padding: 8px;
-                text-align: left;
-            }
-            .course-table th {
-                background-color: #f2f2f2;
-            }
-            .courses-section {
-                text-align: center;
-                padding: 50px 0;
-            }
-        </style>
-           <style>
-            /* Franchise Dropdown */
-            .main-nav li {
-                position: relative;
-            }
-            
-            /* Links within the list items */
-            .main-nav a {
-                display: block;
-                padding: 10px 15px;
-                text-decoration: none;
-                color: #f9f9f9;
-            }
-            
-            /* Styling the dropdown menu */
-            .main-nav .has-dropdown .dropdown {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background: #f9f9f9;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                min-width: 200px;
-                z-index: 1000;
-                border-radius: 4px;
-                overflow: hidden;
-            }
-            
-            .main-nav .has-dropdown:hover .dropdown {
-                display: block;
-            }
-            
-            .main-nav .dropdown li {
-                width: 100%;
-            }
-            .main-nav .dropdown a {
-                padding: 10px 15px;
-                white-space: nowrap;
-                color: #000;
-            }
-            
-            .main-nav .dropdown a:hover {
-                background: #f5f5f5;
-            }
-            
-            .main-nav a:hover {
-                background: #555555;
-            }
-            
-                </style>
 </head>
 <body>
     <header>
@@ -810,24 +418,22 @@
             </section>
             <section class="ftco-section">
                 <div class="container">
-                    <div class="row d-flex">
-                        <div class="col-md-6 d-flex ftco-animate">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-md-6 ftco-animate">
                             <div class="hero-wrap align-self-stretch">
-                                <!-- <img src="styles/images/admi.jpeg" alt="Micro-Tech Institute of Education"> -->
+                                <img src="styles/images/admi.jpeg" alt="Micro-Tech Institute of Education" style="width: 100%; height: auto; display: block; margin: 0;">
                             </div>
                         </div>
                         <div class="col-md-6 pl-md-5 ftco-animate">
                             <h4 class="mb-4">MICRO-TECH INSTITUTE OF EDUCATION</h4>
-                            <h6 ><p>"Microtech -Institute of education is called “microtech” micro-tech is value name of MICRO-TEACH. The mission is started since 2023, four youth employment this mission has about 100 associated learning centres countrywide and this number is increasing every day. Microtech institute is the biggest educational which provides a great platform in IT sector in India sub -continent it is an ISO 9001 and 2015 certified company having mission to promote IT education and awareness to produce a story plinth to construct their future ans carrier .IT is an independent to cater to the basic needs in computer education".</p>
-                                <p> "It is a matter of great proud and pleasers that our country is a fast developing Country Inn economy, education.Since technology etc. India is a large population which needs to enhance human capital in development country. in a study is conducted by World Bank it has been found that the rule of human capital in development is far more important than physical capital for India. it has been essential that across to at least 25% of the relevant age Group between 17 to 23 in higher education it necessary to ensure development on a par with the needs of the day Microtech Institute of education autonomous organisation Reg.ByGovt of Bihar under the companies Act,2013 Ministry of corporate affairs,Govt, of India An  ISO 9001 :2015 certificate companies In this context micro -teach Institute of education unit at a programme to provide.it it education on various grade and courses to the people of India sub -continent our organisation is committeal and dedicated to achieve goal in mention a learner focus in providing accessible and quality education to directly prepare our student for further study,or Carrier in the IT and business goal economics.</p></h6>
+                            <h6>
+                                <p>"Microtech - Institute of Education is called “microtech”. Micro-tech is the valuable name of MICRO-TEACH. The mission started in 2023 for youth employment, and this mission has about 100 associated learning centers countrywide, with this number increasing every day. Microtech Institute is the biggest educational institution providing a great platform in the IT sector in the Indian subcontinent. It is an ISO 9001:2015 certified company with a mission to promote IT education and awareness to build a strong foundation for future careers. It is dedicated to fulfilling the basic needs in computer education."</p>
+                                <p>"It is a matter of great pride and pleasure that our country is rapidly developing in economy and education. Given India's large population, enhancing human capital is crucial for national development. According to a study by the World Bank, human capital development is more critical than physical capital for India. Ensuring access to at least 25% of the relevant age group (between 17 to 23 years) for higher education is necessary to meet the country's developmental needs. Microtech Institute of Education is an autonomous organization registered under the Companies Act, 2013 by the Government of Bihar, Ministry of Corporate Affairs, Government of India. In this context, Micro-Tech Institute of Education aims to provide IT education across various grades and courses to the people of the Indian subcontinent. Our organization is committed and dedicated to achieving its goals by focusing on providing accessible and quality education, preparing students directly for further studies and careers in IT and business economics."</p>
+                            </h6>
                         </div>
-                        <div class="hero-wrap align-self-stretch">
-                            <img src="styles/images/admi.jpeg" alt="Micro-Tech Institute of Education" style="width: 20%; height: auto;">
-                        </div>                        
                     </div>
                 </div>
             </section>
-        
             
             <!-- Counter Section -->
             <section class="counter-section">

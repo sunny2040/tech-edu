@@ -1,0 +1,24 @@
+{
+  "name": "tech-edu",
+  "version": "1.0.0",
+  "description": "This is a web application for Microtech-edu, which includes student management, center management functionalities.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunny2040/tech-edu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunny2040/tech-edu/issues"
+  },
+  "homepage": "https://github.com/sunny2040/tech-edu#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
