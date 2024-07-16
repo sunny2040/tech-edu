@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-Tech Institute Of Education E-Book</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .ebook {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #0056b3;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        main section {
+            background: linear-gradient(135deg, #ffffff, #e9ecef);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            flex: 1 1 calc(45% - 20px);
+            box-sizing: border-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        main section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        main section h2 {
+            margin: 0 0 10px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 10px;
+            color: #333;
+        }
+
+        main section p {
+            margin: 0;
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="ebook">
+        <header>
+            <h1>Micro-Tech Institute Of Education E-Book</h1>
+            <p>Your guide to various Computer Courses</p>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="cca.html">Certificate in Computer Application (CCA)</a></li>
+                <li><a href="dca.html">Diploma in Computer Application (DCA)</a></li>
+                <li><a href="cfa.html">Certificate in Financial Accounting (CFA)</a></li>
+                <li><a href="dtp.html">Diploma in Desktop Publishing (DTP)</a></li>
+                <li><a href="ccoa.html">Certificate in Office Automation (CCOA)</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="cca" onclick="location.href='cca.html'">
+                <h2>Certificate in Computer Application (CCA)</h2>
+                <p>This course provides foundational knowledge in computer applications.</p>
+            </section>
+            <section id="dca" onclick="location.href='dca.html'">
+                <h2>Diploma in Computer Application (DCA)</h2>
+                <p>This diploma covers advanced topics in computer applications.</p>
+            </section>
+            <section id="cfa" onclick="location.href='cfa.html'">
+                <h2>Certificate in Financial Accounting (CFA)</h2>
+                <p>This course focuses on financial accounting principles and practices.</p>
+            </section>
+            <section id="dtp" onclick="location.href='dtp.html'">
+                <h2>Diploma in Desktop Publishing (DTP)</h2>
+                <p>This diploma offers training in desktop publishing software and techniques.</p>
+            </section>
+            <section id="ccoa" onclick="location.href='ccoa.html'">
+                <h2>Certificate in Office Automation (CCOA)</h2>
+                <p>This course covers office automation tools and software.</p>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Micro-Tech Institute Of Education. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

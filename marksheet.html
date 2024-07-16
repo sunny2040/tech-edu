@@ -6,152 +6,6 @@
     <title>Micro-Tech Institute Of Education</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* styles.css */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-
-        header {
-            background-color: #002147;
-            color: #fff;
-            padding: 10px 0;
-        }
-
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .logo img {
-            height: 60px;
-        }
-
-        .navigation ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        .navigation li {
-            margin: 0 10px;
-        }
-
-        .navigation a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .language-switch a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 5px;
-        }
-
-        .banner {
-            position: relative;
-            text-align: center;
-            color: white;
-        }
-
-        .banner img {
-            width: 100%;
-            height: auto;
-        }
-
-        .banner-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .banner-text h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .info-section {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
-        .info-box {
-            flex: 1;
-            margin-right: 10px;
-        }
-
-        .recent-students {
-            flex: 1;
-            margin-left: 10px;
-        }
-
-        .student-list {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .student {
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .student img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-        }
-
-        .actions {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .actions a {
-            text-decoration: none;
-        }
-
-        .actions button {
-            background-color: #002147;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .actions button:hover {
-            background-color: #0056b3;
-        }
-
-        footer {
-            background-color: #002147;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        .footer-content {
-            padding: 0 20px;
-        }
-    </style>
-    <style>
         /* Additional CSS for styling */
         body {
             font-family: Arial, sans-serif;
@@ -422,60 +276,93 @@
         line-height: 1.6;
     }
 </style>
-    <style>
-/* Franchise Dropdown */
-.main-nav li {
-    position: relative;
+
+<style>
+    .hero-wrap {
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        min-height: 300px; /* Adjust this value based on the desired minimum height */
+    }
+    .hero-wrap img {
+        width: 100%;
+        height: auto;
+    }
+</style>
+<style>
+    /* Franchise Dropdown */
+    .main-nav li {
+        position: relative;
+    }
+    
+    /* Links within the list items */
+    .main-nav a {
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #f9f9f9;
+    }
+    
+    /* Styling the dropdown menu */
+    .main-nav .has-dropdown .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #f9f9f9;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        min-width: 200px;
+        z-index: 1000;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    .main-nav .has-dropdown:hover .dropdown {
+        display: block;
+    }
+    
+    .main-nav .dropdown li {
+        width: 100%;
+    }
+    .main-nav .dropdown a {
+        padding: 10px 15px;
+        white-space: nowrap;
+        color: #000;
+    }
+    
+    .main-nav .dropdown a:hover {
+        background: #f5f5f5;
+    }
+    
+    .main-nav a:hover {
+        background: #555555;
+    }
+    
+</style>
+<style>
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px auto; /* Center the card horizontally */
+    max-width: 900px; /* Adjust max width as needed */
 }
 
-/* Links within the list items */
-.main-nav a {
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #f9f9f9;
+.card-body {
+    padding: 100px;
 }
 
-/* Styling the dropdown menu */
-.main-nav .has-dropdown .dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #f9f9f9;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    min-width: 200px;
-    z-index: 1000;
-    border-radius: 4px;
-    overflow: hidden;
+.card-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.main-nav .has-dropdown:hover .dropdown {
-    display: block;
-}
-
-.main-nav .dropdown li {
-    width: 100%;
-}
-.main-nav .dropdown a {
-    padding: 10px 15px;
-    white-space: nowrap;
-    color: #000;
-}
-
-.main-nav .dropdown a:hover {
-    background: #f5f5f5;
-}
-
-.main-nav a:hover {
-    background: #555555;
-}
-
-    </style>
-</head>
+</style>    
 <body>
     <header>
         <div class="top-bar">
@@ -507,71 +394,41 @@
                 <a href="certificate-verification.html"><button>Certificate Verification</button></a>
                 <!-- Add more buttons as needed -->
             </section>
-             <!-- Course Categories Section -->
-        <section class="ftco-section bg-light-blue courses-section">
-            <div class="container">
-                <h2 class="mb-4">COURSES CATEGORIES</h2>
-                <div class="courses-container">
-                    <!-- Course 1: CERTIFICATE IN COMPUTER APPLICATION -->
-                    <div class="course-card">
-                        <a href="cca.html" class="img d-flex align-items-center justify-content-center">
-                            <img src="styles/images/cca.jpg" alt="Certificate in Computer Application">
-                        </a>
-                        <h3><a href="cca.html">Certificate in Computer Application</a></h3>
-                    </div>
-                    <!-- Course 2: DIPLOMA IN COMPUTER APPLICATION -->
-                    <div class="course-card">
-                        <a href="dca.html" class="img d-flex align-items-center justify-content-center">
-                            <img src="styles/images/dca.jpg" alt="Diploma in Computer Application">
-                        </a>
-                        <h3><a href="dca.html">Diploma in Computer Application</a></h3>
-                    </div>
-                    <!-- Course 3: CERTIFICATE IN FINANCIAL ACCOUNTING -->
-                    <div class="course-card">
-                        <a href="cfa.html" class="img d-flex align-items-center justify-content-center">
-                            <img src="styles/images/cfa.jpg" alt="Certificate in Financial Accounting">
-                        </a>
-                        <h3><a href="cfa.html">Certificate in Financial Accounting</a></h3>
-                    </div>
-                </div>
-                <div class="text-center mt-4">
-                    <a href="course.html" class="btn btn-primary">View Course Categories</a>
-                </div>
-            </div>
-        </section>
-        
-        <section class="ftco-section bg-yellow courses-section">
-            <div class="container">
-                <h2 class="mb-4">BOARD OF ADVISORY MEMBER</h2>
-                <div class="courses-container">
-                    <div class="course-card">
-                        <a href="#" class="img d-flex align-items-center justify-content-center">
-                            <img src="styles/images/sandhya.jpeg" alt="Sandhya Kumar">
-                        </a>
-                        <h3><a href="#">SANDHYA KUMARI</a></h3>
-                        <p>MANAGING DIRECTOR</p>
-                    </div>
-                    <div class="course-card">
-                        <a href="#" class="img d-flex align-items-center justify-content-center">
-                            <img src="styles/images/amit.jpg" alt="Amit Kumar">
-                        </a>
-                        <h3><a href="#">AMIT KUMAR</a></h3>
-                        <p>ACCOUNTS & SALES</p>
-                    </div>
-                    <div class="course-card">
-                        <a href="#" class="img d-flex align-items-center justify-content-center">
-                            <img src="styles/images/rohit.jpg" alt="Rohit Kumar">
-                        </a>
-                        <h3><a href="#">ROHIT KUMAR</a></h3>
-                        <p>COM. TEACHER</p>
+            <section class="certificate-section">
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title"><strong>GET MARKSHEET</strong></h2>
+                            
+                            <!-- Enrollment and Date of Birth Form -->
+                            <form class="form" action="#" method="POST">
+                                <div class="row">
+                                    <!-- Enrollment No. Field -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="enrollmentNo">Enrollment No.</label>
+                                            <input type="text" id="enrollmentNo" name="enrollmentNo" class="form-control" placeholder="Enter Enrollment No." required>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Date of Birth Field -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="dob">Date of Birth</label>
+                                            <input type="date" id="dob" name="dob" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Submit Button (Centered) -->
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                <div class="text-center mt-4">
-                    <a href="#" class="btn btn-primary">VIEW ALL ADVISORY MEMBER</a>
-                </div>
-            </div>
-        </section>
-
+            </section>
         </div>
     </main>
     <footer>
