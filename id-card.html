@@ -29,15 +29,21 @@
 
         .header {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
             width: 100%;
             margin-bottom: 20px;
         }
 
         .header img {
-            width: 100%; /* Adjusted width to fit the container */
-            height: 20%;
+            width: 100%;
+            height: 100px; /* Adjusted height to fit the container */
+        }
+
+        .center-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
 
         h1 {
@@ -53,6 +59,9 @@
             background-color: #fff;
             position: relative;
             text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .id-card h2 {
@@ -64,7 +73,8 @@
         }
 
         .id-card .details {
-            margin-top: 20px;
+            flex: 1;
+            margin-left: 20px;
         }
 
         .id-card p {
@@ -74,9 +84,8 @@
         }
 
         .id-card .photo-container {
-            position: absolute;
-            top: 20px; /* Adjusted top position */
-            right: 20px; /* Adjusted right position */
+            flex-shrink: 0;
+            margin-right: 20px;
         }
 
         .id-card img.student-photo {
@@ -86,25 +95,60 @@
             object-fit: cover;
             border: 3px solid #333;
         }
+
+        .id-card .qr-code-container {
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+
+        .id-card img.qr-code-image {
+            width: 100px; /* Set the size of the QR code */
+            height: 100px; /* Set the size of the QR code */
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
+            <div class="center-name">E-Max Education</div>
             <img src="styles/images/logooooo.jpg" alt="Institute Logo">
         </div>
         <h1>Student ID Card</h1>
         <div class="id-card">
-            <div class="details">
-                <h2>Rohit</h2>
-                <p><strong>ID:</strong> 123456</p>
-                <p><strong>Course:</strong> Advanced Web Development</p>
-                <p><strong>Year:</strong> 2024</p>
-            </div>
             <div class="photo-container">
                 <img class="student-photo" src="styles/images/rohit.jpg" alt="Student Photo">
             </div>
+            <div class="details">
+                <h2>Rohit</h2>
+                <p><strong>ID:</strong> 123456</p>
+                <p><strong>Course:</strong> Certificate in Computer Application (CCA)</p>
+                <p><strong>Year:</strong> 2024</p>
+                <p><strong>Father's Name:</strong> Mr. Kumar</p>
+            </div>
+            <div class="qr-code-container">
+                <img id="qr-code" class="qr-code-image" alt="QR Code">
+            </div>
         </div>
     </div>
+    <script>
+        // Student details
+        const studentDetails = {
+            id: "123456",
+            name: "Rohit",
+            course: "Certificate in Computer Application (CCA)",
+            year: "2024",
+            fatherName: "Mr. Kumar"
+        };
+
+        // Generate QR code data string
+        const qrData = `ID: ${studentDetails.id}\nName: ${studentDetails.name}\nCourse: ${studentDetails.course}\nYear: ${studentDetails.year}\nFather's Name: ${studentDetails.fatherName}`;
+
+        // URL encode the data
+        const qrDataEncoded = encodeURIComponent(qrData);
+
+        // Set QR code image source
+        const qrCodeImage = document.getElementById('qr-code');
+        qrCodeImage.src = `https://api.qrserver.com/v1/create-qr-code/?data=${qrDataEncoded}&size=100x100`;
+    </script>
 </body>
 </html>

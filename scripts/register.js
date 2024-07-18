@@ -41,8 +41,8 @@
 
 // Sample hardcoded users for admin and student
 let hardcodedUsers = [
-    { username: 'admin', password: 'admin123', fullname: 'Admin', role: 'admin', institute: 'E-Max Education' },
-    { username: 'student', password: 'student123', fullname: 'Student', role: 'student', institute: 'E-Max Education' }
+    { username: 'admin', password: 'admin123', fullname: 'Admin User', role: 'admin', institute: 'E-Max Education' },
+    { username: 'student', password: 'student123', fullname: 'Student User', role: 'student', institute: 'E-Max Education' }
 ];
 
 // Check if users exist in localStorage, if not, initialize with hardcoded users

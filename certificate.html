@@ -176,6 +176,44 @@
         .footer-content {
             padding: 0 20px;
         }
+        body, html {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+               
+                font-size: 24px;
+                text-align: center;
+            }
+            .container {
+                border: 20px solid tan;
+                width: 750px;
+                height: 563px;
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .logo {
+                color: tan;
+            }
+
+            .marquee {
+                color: tan;
+                font-size: 48px;
+                margin: 20px;
+            }
+            .assignment {
+                margin: 20px;
+            }
+            .person {
+                border-bottom: 2px solid black;
+                font-size: 32px;
+                font-style: italic;
+                margin: 20px auto;
+                width: 400px;
+            }
+            .reason {
+                margin: 20px;
+            }
     </style>
 </head>
 <body>
@@ -188,7 +226,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="login.html">Student Zone</a></li>
+                    <li><a href="#">Student Zone</a></li>
                     <li><a href="course.html">Courses Offered</a></li>
                     <li><a href="#">Affiliation Process</a></li>
                     <li><a href="#">Gallery</a></li>
@@ -204,30 +242,26 @@
         </div>
         <div class="content">
             <section class="actions">
-                <a href="login.html"><button>Student Login</button></a>
-                <a href="login.html"><button>Center Login</button></a>
-                <a href="certificate-verification.html"><button>Certificate Verification</button></a>
-                <!-- Add more buttons as needed -->
-            </section>
-            <section class="certificate-section">
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="card-title"><strong>GET CERTIFICATE</strong></h2>
-                        <!-- Enrollment and Date of Birth Form -->
-                        <form class="form" action="#" method="POST">
-                            <div class="form-group">
-                                <label for="enrollmentNo">Enrollment No.</label>
-                                <input type="text" id="enrollmentNo" name="enrollmentNo" class="form-control" placeholder="Enter Enrollment No." required>
-                            </div>
-                            <div class="form-group">
-                                <label for="dob">Date of Birth</label>
-                                <input type="date" id="dob" name="dob" class="form-control" required>
-                            </div>
-                            <!-- Submit Button (Centered) -->
-                            <div class="form-group text-center">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </form>
+                <div class="container">
+                    <div class="logo">
+                        E-Max Education
+                    </div>
+        
+                    <div class="marquee">
+                        Certificate of Completion
+                    </div>
+        
+                    <div class="assignment">
+                        This certificate is presented to
+                    </div>
+        
+                    <div class="person">
+                        Rohit
+                    </div>
+        
+                    <div class="reason">
+                        Certificate in Computer Application (CCA)<br/>
+                        2024-2025
                     </div>
                 </div>
             </section>
