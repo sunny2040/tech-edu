@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .certificate-container {
+            text-align: center;
+        }
+        .certificate {
+            width: 900px;
+            height: 1000px;
+            background: white;
+            border: 10px solid #000;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .certificate-header {
+            position: relative;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .roll-number, .enrollment-number {
+            position: absolute;
+            top: 10px;
+            font-size: 16px;
+        }
+        .roll-number {
+            left: 10px;
+        }
+        .enrollment-number {
+            right: 10px;
+        }
+        .certificate-header img.logo {
+            height: 100px;
+        }
+        .certificate-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .student-image {
+            height: 100px;
+            margin-left: 20px;
+            border: 2px solid #000;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .certificate-body {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .certificate-body p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .certificate-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .certificate-body ul li {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        .certificate-footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .certificate-footer .signature {
+            text-align: center;
+        }
+        .certificate-footer .signature img {
+            height: 50px;
+        }
+        .certificate-footer .signature p {
+            margin: 5px 0;
+        }
+        .download-button {
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #000;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+        }
+        .download-button:disabled {
+            background-color: #888;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate-container">
+        <div class="certificate" id="certificate">
+            <div class="certificate-header">
+                <div class="roll-number">Roll No: <b>12345</b></div>
+                <div class="enrollment-number">Enrollment No: <b>67890</b></div>
+                <div class="certificate-header">
+                    <div class="header-content">
+                        <img src="styles/images/logooooo.jpg" alt="E-Max Logo" class="logo">
+                    </div>
+                    <p>(An Autonomous Body Registered Under The SR Act Section 9(1) Act, 2012)</p>
+                    <p>CR Act Department for Promotion of I.I.T. Govt. of India</p>
+                    <p>Govt. Regn. No. HR/KKR/2015/00328</p>
+                </div>
+                <div class="header-content">
+                    <div class="certificate-title">
+                        CERTIFICATE
+                        <p><h6>Session: June 2024 To December 2024</h6></p>
+                    </div>
+                    <div class="header-content">
+                        <img src="styles/images/rohit.jpg" alt="Student Image" class="student-image">
+                    </div>
+                </div>
+                <p>(An Autonomous Body Registered Under The SR Act Section 9(1) Act, 2012)</p>
+                <p>CR Act Department for Promotion of I.I.T. Govt. of India</p>
+                <p>Govt. Regn. No. HR/KKR/2015/00328</p>
+            </div>
+            <div class="certificate-body">
+                <p>This is to certify that <b>ROHIT</b></p>
+                <p>Father's Name: <b>MR. KUMAR</b></p>
+                <p>Has completed <b>Certificate in Computer Application (6 Months)</b></p>
+                <p>At <b>Micro Tech Edu.</b> (Saraiya, Muzaffarpur, Bihar Code EMAX/EN93902)</p>
+                <p>with the following subjects:</p>
+                <ul>
+                    <li>Certificate in Computer Application (CCA)</li>
+                    <li>Certificate in Computer Application (CCA)</li>
+                </ul>
+                <p>He has secured <b>83% Marks</b> with <b>A Grade</b></p>
+                <p>Issue Date: <b>11 January 2024</b></p>
+            </div>
+            <div class="certificate-footer">
+                <div class="signature">
+                    <img src="styles/images/sign.png" alt="Signature">
+                    <p>Controller of Exam</p>
+                </div>
+                <div class="signature">
+                    <img src="styles/images/sign.png" alt="Signature">
+                    <p>E-Max Education Secretary</p>
+                </div>
+            </div>
+        </div>
+        <button class="download-button" id="downloadButton" onclick="downloadCertificate()" disabled>Download Certificate</button>
+    </div>
+
+    <script>
+        function downloadCertificate() {
+            const certificate = document.getElementById('certificate');
+            html2canvas(certificate).then(canvas => {
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'certificate.png';
+                link.click();
+            });
+        }
+
+        // Load html2canvas library dynamically
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js';
+        script.onload = () => {
+            console.log('html2canvas loaded successfully');
+            document.getElementById('downloadButton').disabled = false;
+        };
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>
