@@ -9,68 +9,72 @@
             font-family: Arial, sans-serif;
         }
         .id-card {
-            width: 600px;
+            width: 268.8px; /* 71.12 mm */
+            height: 412.9px; /* 109.22 mm */
             border: 2px solid #000;
-            padding: 20px;
+            padding: 10px;
             margin: 20px auto;
             position: relative;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .header {
             background-color: #003366;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 5px 0;
         }
         .header h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 14px;
         }
         .header p {
-            margin: 5px 0;
-            font-size: 14px;
+            margin: 3px 0;
+            font-size: 8px;
         }
         .photo {
             float: left;
-            width: 100px;
-            height: 120px;
-            margin-right: 20px;
+            width: 80px;
+            height: 100px;
+            margin-right: 10px;
         }
         .details {
             overflow: hidden;
+            font-size: 10px;
         }
         .details h2 {
             margin: 0;
             color: #d2322d;
-            font-size: 18px;
+            font-size: 12px;
         }
         .details p {
-            margin: 5px 0;
-            font-size: 16px;
+            margin: 3px 0;
         }
         .footer {
             clear: both;
-            margin-top: 20px;
+            margin-top: 10px;
+            font-size: 8px;
         }
         .footer p {
-            margin: 5px 0;
+            margin: 3px 0;
         }
         .footer .head-office {
             background-color: #d2322d;
             color: white;
             text-align: center;
-            padding: 5px;
-            font-size: 16px;
+            padding: 2px;
         }
         .footer .address {
             background-color: #c0c0c0;
             text-align: center;
-            padding: 5px;
-            font-size: 16px;
+            padding: 2px;
         }
         .qrcode {
             float: right;
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
         }
         .download-btn {
             display: block;
@@ -89,8 +93,8 @@
 <body>
     <div class="id-card" id="idCard">
         <div class="header">
-            <h1>Micro Tech Edu.</h1>
-            <p>Bakhra Saraiya, Muzaffarpur, Bihar 843101</p>
+            <h1>MICRO-TECH INSTITUTE OF EDUCATION PVT. LTD.</h1>
+            <p>City-Muzaffarpur Bihar India 843101</p>
             <p>Code Emax/en93902</p>
         </div>
         <div class="details">
@@ -105,8 +109,8 @@
         <div class="footer">
             <p>www.microtechedu.com</p>
             <p>Valid up to 2 Years of issue Date</p>
-            <div class="head-office">Head Office: E-MAX INDIA</div>
-            <div class="address">Divine City Center, Kurukshetra, (HR) India</div>
+            <div class="head-office">Head Office: MICRO-TECH INSTITUTE OF EDUCATION PVT. LTD.</div>
+            <div class="address">City-Muzaffarpur Bihar India 843101</div>
         </div>
     </div>
     <a href="#" class="download-btn" id="downloadBtn">Download ID Card</a>
@@ -120,8 +124,8 @@
             fatherName: "MR. KUMAR",
             dateOfIssue: "19 July 2024",
             rollNo: "1234567",
-            institution: "Micro Tech Edu.",
-            address: "Bakhra Saraiya, Muzaffarpur, Bihar 843101",
+            institution: "MICRO-TECH INSTITUTE OF EDUCATION PVT. LTD.",
+            address: "Muzaffarpur Bihar India 843101",
             code: "Emax/en93902"
         };
 
