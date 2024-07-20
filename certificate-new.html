@@ -31,10 +31,24 @@
             flex-direction: column;
             justify-content: space-between;
         }
-        .certificate-header {
+        .certificate::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('styles/images/658e88cbd90fb.jpg'); /* Add your background image path here */
+            background-size: cover; /* Cover the entire area */
+            background-position: center; /* Center the image */
+            opacity: 0.1; /* Set opacity for the background image */
+            z-index: 0; /* Ensure it's behind the content */
+        }
+        .certificate-header,
+        .certificate-body,
+        .certificate-footer {
             position: relative;
-            text-align: center;
-            margin-bottom: 20px;
+            z-index: 1; /* Ensure content is above the background image */
         }
         .roll-number, .enrollment-number {
             position: absolute;
@@ -48,6 +62,7 @@
             right: 10px;
         }
         .certificate-header img.logo {
+            width: 60%;
             height: 100px;
         }
         .certificate-title {
@@ -122,7 +137,7 @@
                 <div class="enrollment-number">Enrollment No: <b>67890</b></div>
                 <div class="certificate-header">
                     <div class="header-content">
-                        <img src="styles/images/logooooo.jpg" alt="E-Max Logo" class="logo">
+                        <img src="styles/images/banner-logo.jpg" alt="E-Max Logo" class="logo">
                     </div>
                     <p>(An Autonomous Body Registered Under The SR Act Section 9(1) Act, 2012)</p>
                     <p>CR Act Department for Promotion of I.I.T. Govt. of India</p>
