@@ -1,3 +1,237 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .certificate::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('styles/images/658e88cbd90fb.jpg'); /* Add your background image path here */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        .certificate-header,
+        .certificate-body,
+        .certificate-footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .certificate {
+            border: 10px solid black;
+            padding: 20px;
+            width: 297mm;
+            height: 210mm;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .iso-logo {
+            height: 130px;
+        }
+        .logo {
+            height: 180px;
+        }
+
+        .header-text {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .header-text .banner {
+            max-height: 180px;
+            width: 100%;
+        }
+
+        .header-text p {
+            margin: 0;
+            padding-top: 10px;
+            font-size: 14px;
+        }
+
+        .certificate-body {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .certificate-body h2 {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 40px;
+        }
+
+        .qr-photo-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .photo img, .qr-code img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+
+        .certificate-text {
+            text-align: justify;
+            margin: 20px 0;
+            clear: both;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .footer-left, .footer-right {
+            text-align: left;
+        }
+
+        .footer-left p, .footer-right p {
+            margin: 5px 0;
+        }
+
+        .footer-logos {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 20px 0;
+        }
+
+        .footer-logos img {
+            height: 50px;
+        }
+
+        .footer-address {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .footer-address p {
+            font-size: 14px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate" id="certificate">
+        <header>
+            <img src="styles/images/658e88cbd90fb.jpg" alt="Institute Logo" class="logo">
+            <div class="header-text">
+                <img src="styles/images/loggg.png" alt="Institute Logo" class="banner">
+                <p>Regd. Under the companies Act, 2013 Ministry of Corporate Affairs,<br>Govt. of India.<br>An ISO 9001 : 2015 Certified Companies</p>
+            </div>
+            <img src="styles/images/iso.png" alt="ISO Certification" class="iso-logo">
+        </header>
+        <div class="certificate-body">
+            <h2>Certificate</h2>
+            <div class="qr-photo-row">
+                <div class="qr-code">
+                    <img src="styles/images/certificate_qr_code.png" alt="QR Code">
+                </div>
+                <div class="photo">
+                    <img src="styles/images/rohit.jpg" alt="Photo">
+                </div>
+            </div>
+            <p class="certificate-text">
+                This is to certify that <strong>ROHIT</strong> S/D of Shri <strong>Mr. Kumar</strong> Born On <strong>20-08-1995</strong>
+                appeared in <strong>CCA</strong> at <strong>MICRO-TECH INSTITUTE OF EDUCATION</strong> of duration <strong>6 Months</strong>. Examination of the
+                Council held in and has been declared <strong>PASS</strong>. He / She scored <strong>536</strong> marks out of <strong>600</strong> marks and is placed in
+                RESULT: <strong>PASSED GRADE A+</strong>.
+            </p>
+        </div>
+        <footer>
+            <div class="footer-left">
+                <p>Date of Issue <strong>28-02-2024</strong></p>
+                <p>Branch Director</p>
+            </div>
+            <div class="footer-right">
+                <p>ENROLLMENT NO: MT1709110799</p>
+                <p>Chairman/Director (M.T.I.E)</p>
+            </div>
+        </footer>
+        <div class="footer-logos">
+            <img src="styles/images/iso.png" alt="ISO Logo">
+            <img src="styles/images/msme.png" alt="MSME Logo">
+            <img src="styles/images/iaf.jpg" alt="IAF Logo">
+            <img src="styles/images/sign.png" alt="Accreditation Logo">
+        </div>
+        <div class="footer-address">
+            <p>Head Office:- Micro-Tech Institute of Education Pvt. Ltd.<br>
+            Saraiya, Vill+P.O. Bakhra, P.S.- Saraiya, Muzaffarpur, Pincode-843101 (Bihar)<br>
+            For more information visit us: <a href="https://www.microtechedu.org">www.microtechedu.org</a></p>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button onclick="printCertificate()">Print Certificate</button>
+        <button onclick="downloadCertificate()">Download Certificate</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        function printCertificate() {
+            window.print();
+        }
+
+        function downloadCertificate() {
+            const element = document.getElementById('certificate');
+            html2canvas(element).then(canvas => {
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'certificate.png';
+                link.click();
+            }).catch(err => {
+                console.error('Error generating image', err);
+            });
+        }
+    </script>
+</body>
+</html> -->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
