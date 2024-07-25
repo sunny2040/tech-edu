@@ -152,3 +152,130 @@
     </script>
 </body>
 </html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-Tech Institute Of Education</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #pdf-render {
+            border: 1px solid black;
+            width: 90%;
+            height: 90vh;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            display: flex;
+            justify-content: center;
+
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="pdf-render"></div>
+
+    <div class="buttons">
+        <button onclick="printCertificate()">Print Certificate</button>
+        <button onclick="downloadCertificate()">Download Certificate</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script>
+        const url = 'styles/pdf/id-card.pdf'; // Corrected path to your PDF file
+
+        let pdfDoc = null,
+            pageNum = 1,
+            pageIsRendering = false,
+            pageNumIsPending = null;
+
+        const scale = 1.5,
+              canvas = document.createElement('canvas'),
+              ctx = canvas.getContext('2d');
+
+        // Append canvas to the pdf-render div
+        const pdfRenderDiv = document.getElementById('pdf-render');
+        pdfRenderDiv.appendChild(canvas);
+
+        // Render the page
+        const renderPage = num => {
+            pageIsRendering = true;
+
+            // Get page
+            pdfDoc.getPage(num).then(page => {
+                const viewport = page.getViewport({ scale });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderCtx = {
+                    canvasContext: ctx,
+                    viewport
+                };
+
+                page.render(renderCtx).promise.then(() => {
+                    pageIsRendering = false;
+
+                    if (pageNumIsPending !== null) {
+                        renderPage(pageNumIsPending);
+                        pageNumIsPending = null;
+                    }
+                });
+
+                // Output current page
+                document.querySelector('#page-num').textContent = num;
+            }).catch(error => {
+                console.error('Error rendering page:', error);
+            });
+        };
+
+        // Get document
+        pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+            pdfDoc = pdfDoc_;
+            console.log('PDF loaded successfully');
+            renderPage(pageNum);
+        }).catch(error => {
+            console.error('Error loading PDF:', error);
+        });
+
+        function printCertificate() {
+            window.print();
+        }
+
+        function downloadCertificate() {
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'id-card.pdf';
+            link.click();
+        }
+    </script>
+</body>
+</html>

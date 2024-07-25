@@ -348,7 +348,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script>
-        const url = 'styles/pdf/MT1708947443.pdf'; // Corrected path to your PDF file
+        const url = 'styles/pdf/mksheet.pdf'; // Corrected path to your PDF file
 
         let pdfDoc = null,
             pageNum = 1,
@@ -410,7 +410,7 @@
         function downloadCertificate() {
             const link = document.createElement('a');
             link.href = url;
-            link.download = 'certificate.pdf';
+            link.download = 'm-sheet.pdf';
             link.click();
         }
     </script>
