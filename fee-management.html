@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-Tech Institute Of Education</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #002147;
+            color: #fff;
+            padding: 15px 0;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            height: 80px;
+        }
+
+        .navigation ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navigation li {
+            margin: 0 15px;
+        }
+
+        .navigation a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .banner {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .banner-text h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .content {
+            padding: 40px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #002147;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .footer-content {
+            padding: 0 20px;
+            font-size: 14px;
+        }
+
+        .fees-management {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .fees-management h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .fees-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .fees-table th, .fees-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .fees-table th {
+            background-color: #97bbee;
+        }
+
+        .fees-table td[contenteditable="true"] {
+            background-color: #f9f9f9;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .update-btn, .delete-btn, .add-record-btn {
+            padding: 5px 10px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .update-btn {
+            background-color: #4CAF50; /* Green */
+        }
+
+        .delete-btn {
+            background-color: #f44336; /* Red */
+        }
+
+        .add-record-btn {
+            background-color: #002147; /* Dark blue */
+            display: block;
+            margin: 0 auto;
+        }
+
+        .disabled-btn {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="styles/images/658e88cbd90fb.jpg" alt="Logo">
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Student Zone</a></li>
+                    <li><a href="course.html">Courses Offered</a></li>
+                    <li><a href="#">Affiliation Process</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Download</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="banner">
+            <img src="styles/images/banner.jpg" alt="Banner">
+        </div>
+
+        <!-- Fees Management Section -->
+        <div class="fees-management">
+            <h2>Fees Management</h2>
+            <table class="fees-table" id="feesTable">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Father's Name</th>
+                        <th>Enrollment No</th>
+                        <th>Courses</th>
+                        <th>Total Fees</th>
+                        <th>Paid Fees</th>
+                        <th>Pending Fees</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true" onblur="updatePendingFees(this)"></td>
+                        <td contenteditable="true" onblur="updatePendingFees(this)"></td>
+                        <td></td>
+                        <td class="action-buttons">
+                            <button class="update-btn disabled-btn" onclick="updateRecord(this)" disabled>Update</button>
+                            <button class="delete-btn" onclick="deleteRecord(this)" disabled>Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="add-record-btn" onclick="addRecord()">Add Record</button>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Micro-Tech Institute Of Education. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let lastSavedData = {};
+
+        // Function to calculate and update pending fees
+        function updatePendingFees(cell) {
+            var row = cell.parentElement;
+            var totalFeesCell = row.cells[4];
+            var paidFeesCell = row.cells[5];
+            var pendingFeesCell = row.cells[6];
+            
+            var totalFees = parseFloat(totalFeesCell.innerText) || 0;
+            var paidFees = parseFloat(paidFeesCell.innerText) || 0;
+            
+            var pendingFees = totalFees - paidFees;
+            pendingFeesCell.innerText = pendingFees >= 0 ? pendingFees : "Invalid";
+
+            enableButtons(row);
+        }
+
+        // Function to add a new record row
+        function addRecord() {
+            var tableBody = document.getElementById("feesTable").getElementsByTagName("tbody")[0];
+            var lastRow = tableBody.rows[tableBody.rows.length - 1];
+            var cells = Array.from(lastRow.cells).slice(0, 6);
+
+            // Check if any cell is empty
+            var allFilled = cells.every(cell => cell.innerText.trim() !== "");
+            if (!allFilled) {
+                alert("Please fill in all the fields before adding a new record.");
+                return;
+            }
+
+            // Save current data
+            lastSavedData = cells.map(cell => cell.innerText);
+
+            // Enable action buttons
+            lastRow.querySelector(".update-btn").disabled = false;
+            lastRow.querySelector(".update-btn").classList.remove("disabled-btn");
+            lastRow.querySelector(".delete-btn").disabled = false;
+
+            // Add new row
+            var newRow = tableBody.insertRow();
+            for (var i = 0; i < 7; i++) {
+                var newCell = newRow.insertCell(i);
+                newCell.contentEditable = "true";
+                if (i === 4 || i === 5) {
+                    newCell.setAttribute("onblur", "updatePendingFees(this)");
+                }
+                newCell.addEventListener("input", () => enableButtons(newRow));
+            }
+
+            var actionCell = newRow.insertCell(7);
+            actionCell.classList.add("action-buttons");
+            actionCell.innerHTML = `
+                <button class="update-btn disabled-btn" onclick="updateRecord(this)" disabled>Update</button>
+                <button class="delete-btn" onclick="deleteRecord(this)" disabled>Delete</button>`;
+        }
+
+        // Function to enable update and delete buttons when data is present
+        function enableButtons(row) {
+            var cells = Array.from(row.cells).slice(0, 6);
+            var anyFilled = cells.some(cell => cell.innerText.trim() !== "");
+            var actionButtons = row.querySelectorAll("button");
+            
+            if (anyFilled) {
+                actionButtons.forEach(btn => btn.disabled = false);
+                row.querySelector(".update-btn").classList.remove("disabled-btn");
+            } else {
+                actionButtons.forEach(btn => btn.disabled = true);
+                row.querySelector(".update-btn").classList.add("disabled-btn");
+            }
+
+            // Check if any field content has changed to enable Update button
+            var currentData = cells.map(cell => cell.innerText);
+            var hasChanged = JSON.stringify(currentData) !== JSON.stringify(lastSavedData);
+            row.querySelector(".update-btn").disabled = !hasChanged;
+        }
+
+        // Function to update a record
+        function updateRecord(button) {
+            var row = button.parentNode.parentNode;
+            var cells = Array.from(row.cells).slice(0, 6);
+            var currentData = cells.map(cell => cell.innerText);
+            
+            lastSavedData = [...currentData];
+            alert("Record updated successfully!"); // Replace with actual update logic
+            enableButtons(row);
+        }
+
+        // Function to delete a record
+        function deleteRecord(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+</body>
+</html>

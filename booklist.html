@@ -103,6 +103,58 @@
             color: #666;
         }
 
+        .upload-section {
+            margin-top: 20px;
+            text-align: center;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .upload-section h2 {
+            margin: 0 0 15px;
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        .upload-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .upload-section input[type="text"], 
+        .upload-section textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .upload-section input[type="file"] {
+            font-size: 1em;
+            color: #007BFF;
+        }
+
+        .upload-section input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .upload-section input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
         footer {
             text-align: center;
             padding: 10px 0;
@@ -127,7 +179,8 @@
                 <li><a href="ccoa.html">Certificate in Office Automation (CCOA)</a></li>
             </ul>
         </nav>
-        <main>
+        <main id="mainContent">
+            <!-- Static sections -->
             <section id="cca" onclick="location.href='cca.html'">
                 <h2>Certificate in Computer Application (CCA)</h2>
                 <p>This course provides foundational knowledge in computer applications.</p>
@@ -148,10 +201,111 @@
                 <h2>Certificate in Office Automation (CCOA)</h2>
                 <p>This course covers office automation tools and software.</p>
             </section>
+            <!-- Dynamic sections will be added here -->
         </main>
+        <div class="upload-section">
+            <h2>Upload Your PDF Book</h2>
+            <form id="uploadForm">
+                <input type="text" id="bookName" placeholder="Book Name" required>
+                <textarea id="bookDescription" placeholder="Book Description" rows="4" required></textarea>
+                <input type="file" id="pdfFile" accept=".pdf" required>
+                <input type="submit" value="Upload Book">
+            </form>
+        </div>
         <footer>
             <p>&copy; 2024 Micro-Tech Institute Of Education. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        const dbName = 'pdfBooksDB';
+        const dbVersion = 1;
+        let db;
+
+        function openDB() {
+            const request = indexedDB.open(dbName, dbVersion);
+
+            request.onupgradeneeded = function(event) {
+                db = event.target.result;
+                if (!db.objectStoreNames.contains('books')) {
+                    db.createObjectStore('books', { keyPath: 'id', autoIncrement: true });
+                }
+            };
+
+            request.onsuccess = function(event) {
+                db = event.target.result;
+                displayBooks();
+            };
+
+            request.onerror = function(event) {
+                console.error('Database error:', event.target.errorCode);
+            };
+        }
+
+        function addBook(book) {
+            const transaction = db.transaction(['books'], 'readwrite');
+            const store = transaction.objectStore('books');
+            store.add(book);
+            transaction.oncomplete = function() {
+                displayBooks();
+            };
+            transaction.onerror = function(event) {
+                console.error('Transaction error:', event.target.errorCode);
+            };
+        }
+
+        function displayBooks() {
+            const transaction = db.transaction(['books'], 'readonly');
+            const store = transaction.objectStore('books');
+            const request = store.getAll();
+
+            request.onsuccess = function(event) {
+                const books = event.target.result;
+                const mainContent = document.getElementById('mainContent');
+                
+                // Append dynamic content after static content
+                books.forEach(book => {
+                    const section = document.createElement('section');
+                    section.innerHTML = `
+                        <h2>${book.name}</h2>
+                        <p>${book.description}</p>
+                        <a href="${URL.createObjectURL(new Blob([book.file], { type: 'application/pdf' }))}" target="_blank">Open PDF</a>
+                    `;
+                    mainContent.appendChild(section);
+                });
+            };
+        }
+
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const bookName = document.getElementById('bookName').value;
+            const bookDescription = document.getElementById('bookDescription').value;
+            const pdfFile = document.getElementById('pdfFile').files[0];
+
+            if (!pdfFile) {
+                alert('Please select a PDF file.');
+                return;
+            }
+
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const book = {
+                    name: bookName,
+                    description: bookDescription,
+                    file: e.target.result
+                };
+                addBook(book);
+
+                // Clear the form fields after successful upload
+                document.getElementById('uploadForm').reset();
+            };
+
+            reader.readAsArrayBuffer(pdfFile);
+        });
+
+        openDB();
+    </script>
 </body>
 </html>
